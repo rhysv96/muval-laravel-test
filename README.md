@@ -33,14 +33,16 @@ You are provided with a Laravel project that contains intentional flaws. Your ob
 
 ### **5. Provide Deliverables**
 Prepare the following deliverables:
-1. **Issue Report (`report.md`)**  
-   A detailed report of the issues you identified, why they are problematic, and how you fixed or would fix them. A breakdown of the changes you have made to meet the new API requirements.
-2. **Refactored Codebase**  
-   A Zip file containing your updated codebase.
-3. **Tests**  
+1. **Download project**
+   Pull down the `main` branch and create an new branch called `test/<your-full-name>`
+2. **Issue Report (`report.md`)**  
+   Write a detailed report of the issues you identified, why they are problematic, and how you fixed or would fix them. Include a breakdown of the changes you have made to meet the new API requirements.
+3. **Refactored Codebase**  
+   Write comments next to the code you refactored to outline why you changed the code.
+4. **Tests**  
    Include unit or feature tests for code coverage in the Zip file.
-3. **Upload**  
-   Upload your Zip file to the TestDome question.
+5. **Upload**  
+   Push your changes to the repo and create a Pull Request.
 
 ## **What to Look For**
 
