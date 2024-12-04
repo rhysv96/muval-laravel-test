@@ -24,8 +24,8 @@ You are provided with a Laravel project that contains intentional flaws. Your ob
 - Ensure your fixes address both functionality and maintainability.
 
 ### **3. Create API Endpoints**
-- Turn the codebase into a set of API endpoints to manage tasks with Sanctum authentication.
-- Add unit or feature tests for key functionality.
+- Turn the codebase into a set of API endpoints to manage tasks.
+- Implement user authentication using Sanctum.
 
 ### **4. Test Your Changes**
 - Test your fixes to ensure the application works as expected.
@@ -91,12 +91,14 @@ You will be evaluated on:
     - Did you add meaningful tests for key features or fixes?
     - Do the tests cover the codebase adequately?
 
-## **Time Limit**
-This task is estimated to take 4–5 hours.
-
 ## **BONUS**
-If you have extra time, consider the following:
-- Build an SPA using Vue3 and TailwindCSS to consume the API and submit this codebase with your backend code base inside the Zip file.
+If you have extra time, consider submitting the following:
+- Pull the `main` branch of `https://github.com/muval-apps/muval-bonus-test` and create a branch called `test/<your-full-name>`.
+- Build an SPA using Vue3 and TailwindCSS to consume the API.
+- Push your code to the repo and create a Pull Request.
+
+## **Due Date**
+Please submit your solution, including the bonus test if you choose to do that, by **5pm AEST, 12/12/2024**.
 
 --- 
 If you have any questions or encounter issues during the task, feel free to reach out to nicole@muval.com.au. Good luck!
