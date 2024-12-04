@@ -1,4 +1,4 @@
-# **Codebase Review Task Instructions**
+# **Muval Code Test Instructions**
 
 ## **Overview**
 This task is designed to assess your ability to:
