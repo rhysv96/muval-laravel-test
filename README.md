@@ -34,15 +34,15 @@ You are provided with a Laravel project that contains intentional flaws. Your ob
 ### **5. Provide Deliverables**
 Prepare the following deliverables:
 1. **Download project**
-   Pull down the `main` branch and create an new branch called `test/<your-full-name>`
+   Download the project files.
 2. **Issue Report (`report.md`)**  
    Write a detailed report of the issues you identified, why they are problematic, and how you fixed or would fix them. Include a breakdown of the changes you have made to meet the new API requirements.
 3. **Refactored Codebase**  
    Write comments next to the code you refactored to outline why you changed the code.
 4. **Tests**  
    Include unit or feature tests for code coverage in the Zip file.
-5. **Upload**  
-   Push your changes to the repo and create a Pull Request.
+5. **Submit**  
+   Compress your solution into a Zip file and send to nicole@muval.com.au. Please do not push your changes to the repo.
 
 ## **What to Look For**
 
@@ -93,9 +93,9 @@ You will be evaluated on:
 
 ## **BONUS**
 If you have extra time, consider submitting the following:
-- Pull the `main` branch of `https://github.com/muval-apps/muval-bonus-test` and create a branch called `test/<your-full-name>`.
+- Download the `main` branch of `https://github.com/muval-apps/muval-bonus-test`
 - Build an SPA using Vue3 and TailwindCSS to consume the API.
-- Push your code to the repo and create a Pull Request.
+- Compress your solution into a Zip file and send to nicole@muval.com.au. Please do not push your changes to the repo.
 
 ## **Due Date**
 Please submit your solution, including the bonus test if you choose to do that, by **5pm AEST, 12/12/2024**.
