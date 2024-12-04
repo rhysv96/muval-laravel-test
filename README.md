@@ -9,8 +9,6 @@ This task is designed to assess your ability to:
 
 You are provided with a Laravel project that contains intentional flaws. Your objective is to review the code, document your findings, and implement fixes and new requirements.
 
----
-
 ## **What You Need to Do**
 
 ### **1. Identify Issues**
@@ -44,8 +42,6 @@ Prepare the following deliverables:
 3. **Upload**  
    Upload your Zip file to the TestDome question.
 
----
-
 ## **What to Look For**
 
 ### **Key Areas to Review**
@@ -59,9 +55,7 @@ Prepare the following deliverables:
     - Does the code follow Laravel conventions and best practices?
 5. **Testing**
     - Are there tests? If not, consider where they might be useful.
-
----
-
+      
 ## **Technical Requirements**
 
 ### **Environment Setup**
@@ -73,7 +67,6 @@ The application is a basic task management system with the following:
 - **Task Management**: Create, view, and edit tasks.
 - **User Assignment**: Each task is associated with a user.
 - **API Endpoints**: Implement a set of API endpoints to manage tasks with Sanctum authentication.
----
 
 ## **Evaluation Criteria**
 You will be evaluated on:
@@ -95,8 +88,6 @@ You will be evaluated on:
 5. **Testing**
     - Did you add meaningful tests for key features or fixes?
     - Do the tests cover the codebase adequately?
-
----
 
 ## **Time Limit**
 This task is estimated to take 4–5 hours.
