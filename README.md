@@ -48,11 +48,11 @@ Prepare the following deliverables:
 
 ### **Key Areas to Review**
 1. **Security**
-    - Are there any security vulnerabilities (e.g., SQL injection, missing CSRF protection)?
+    - Are there any security vulnerabilities?
 2. **Code Quality**
     - Is the code well-structured, reusable, and maintainable?
 3. **Performance**
-    - Are there performance bottlenecks (e.g., N+1 query issues)?
+    - Are there performance bottlenecks?
 4. **Best Practices**
     - Does the code follow Laravel conventions and best practices?
 5. **Testing**
