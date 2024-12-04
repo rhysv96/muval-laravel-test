@@ -92,6 +92,10 @@ You will be evaluated on:
 ## **Time Limit**
 This task is estimated to take 4–5 hours.
 
+## **BONUS**
+If you have extra time, consider the following:
+- Build an SPA using Vue3 and TailwindCSS to consume the API and submit this codebase with your backend code base inside the Zip file.
+
 --- 
 If you have any questions or encounter issues during the task, feel free to reach out to nicole@muval.com.au. Good luck!
 
