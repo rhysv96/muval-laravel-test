@@ -42,7 +42,7 @@ Prepare the following deliverables:
 4. **Tests**  
    Include unit or feature tests for code coverage in the Zip file.
 5. **Submit**  
-   Compress your solution into a Zip file and send to nicole@muval.com.au. Please do not push your changes to the repo.
+   Compress your solution into a Zip file and send to nicole@muval.com.au.
 
 ## **What to Look For**
 
