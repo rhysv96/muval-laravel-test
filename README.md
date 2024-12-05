@@ -91,14 +91,8 @@ You will be evaluated on:
     - Did you add meaningful tests for key features or fixes?
     - Do the tests cover the codebase adequately?
 
-## **BONUS**
-If you have extra time, consider submitting the following:
-- Download the `main` branch of `https://github.com/muval-apps/muval-bonus-test`
-- Build an SPA using Vue3 and TailwindCSS to consume the API.
-- Compress your solution into a Zip file and send to nicole@muval.com.au. Please do not push your changes to the repo.
-
-## **Due Date**
-Please submit your solution, including the bonus test if you choose to do that, by **5pm AEST, 12/12/2024**.
+## **NEXT**
+Head over to https://github.com/muval-apps/muval-vue3-spa-test and implement a Vue3/TailwindCSS solution that consumes the API you just created.
 
 --- 
 If you have any questions or encounter issues during the task, feel free to reach out to nicole@muval.com.au. Good luck!
