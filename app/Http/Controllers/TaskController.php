@@ -17,6 +17,11 @@ class TaskController extends Controller
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
+    public function create()
+    {
+        return view('tasks.create');
+    }
+
     public function store()
     {
         $title = $_POST['title'];
@@ -24,7 +29,7 @@ class TaskController extends Controller
 
         DB::insert("INSERT INTO tasks (title, description) VALUES ('$title', '$description')");
 
-        return "Task created!";
+        return redirect()->route('tasks.index');
     }
 
     public function edit($id)
@@ -36,6 +41,24 @@ class TaskController extends Controller
         }
 
         return view('tasks.edit', ['task' => $task[0]]);
+    }
+
+    public function update($id)
+    {
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $status = $_POST['status'];
+
+        DB::update("UPDATE tasks SET title = '$title', description = '$description', status = '$status' WHERE id = $id");
+
+        return redirect()->route('tasks.index');
+    }
+
+    public function destroy($id)
+    {
+        DB::delete("DELETE FROM tasks WHERE id = $id");
+
+        return redirect()->route('tasks.index');
     }
 }
 
