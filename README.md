@@ -94,6 +94,8 @@ You will be evaluated on:
 ## **NEXT**
 Head over to https://github.com/muval-apps/muval-vue3-spa-test and implement a Vue3/TailwindCSS solution that consumes the API you just created.
 
+You can submit the Zips for the backend code test, the frontend Vue3 code test, as well as the additional Vue problem solving test at the same time. 
+
 --- 
 If you have any questions or encounter issues during the task, feel free to reach out to nicole@muval.com.au. Good luck!
 
