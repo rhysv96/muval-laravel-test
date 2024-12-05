@@ -26,6 +26,8 @@ You are provided with a Laravel project that contains intentional flaws. Your ob
 ### **3. Create API Endpoints**
 - Turn the codebase into a set of API endpoints to manage tasks.
 - Implement user authentication using Sanctum.
+- Use new controllers and routes, ensuring you leave the existing web routes and refactored controllers (from step 2) untouched.
+- (Ultimately you will be consuming these endpoints in a Vue3 frontend application. (Test 3))
 
 ### **4. Test Your Changes**
 - Test your fixes to ensure the application works as expected.
@@ -42,7 +44,7 @@ Prepare the following deliverables:
 4. **Tests**  
    Include unit or feature tests for code coverage in the Zip file.
 5. **Submit**  
-   Compress your solution into a Zip file and send to nicole@muval.com.au.
+   Compress your solution into a Zip file and send to nicole@muval.com.au. (If you have issues emailing the file, please reach out to us or inform Outposter)
 
 ## **What to Look For**
 
