@@ -42,9 +42,9 @@ Prepare the following deliverables:
 3. **Refactored Codebase**  
    Write comments next to the code you refactored to outline why you changed the code.
 4. **Tests**  
-   Include unit or feature tests for code coverage in the Zip file.
+   Include unit or feature tests for code coverage.
 5. **Submit**  
-   Compress your solution into a Zip file and send to nicole@muval.com.au. (If you have issues emailing the file, please reach out to us or inform Outposter)
+   Compress your solution into a Zip file and Upload the Zip file to the Google Drive provide in your invitation email. Please send any issues to: <nicole@muval.com.au>
 
 ## **What to Look For**
 
@@ -95,8 +95,6 @@ You will be evaluated on:
 
 ## **NEXT**
 Head over to https://github.com/muval-apps/muval-vue3-spa-test and implement a Vue3/TailwindCSS solution that consumes the API you just created.
-
-You can submit the Zips for the backend code test, the frontend Vue3 code test, as well as the additional Vue problem solving test at the same time. 
 
 --- 
 If you have any questions or encounter issues during the task, feel free to reach out to nicole@muval.com.au. Good luck!
