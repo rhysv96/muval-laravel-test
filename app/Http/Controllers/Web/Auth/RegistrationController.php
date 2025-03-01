@@ -1,32 +1,35 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web\Auth;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\Auth\RegisterRequest;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class RegistrationController extends Controller
 {
+    /**
+     * Show registration page
+     */
     public function showRegistrationForm()
     {
         return view('register');
     }
 
-    public function register(Request $request)
+    /**
+     * Register a new user, and send an email verification
+     */
+    public function register(RegisterRequest $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        $user->sendEmailVerificationNotification();
 
         Auth::login($user);
 

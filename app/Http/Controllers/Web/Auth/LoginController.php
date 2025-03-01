@@ -1,25 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web\Auth;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\Auth\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    /**
+     * Show login page
+     */
     public function index()
     {
         return view('index');
     }
 
-    public function login(Request $request)
+    /**
+     * Do login
+     */
+    public function login(LoginRequest $request)
     {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:6',
-        ]);
-
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($request->validated())) {
             $request->session()->regenerate();
 
             return redirect()->intended('tasks')
@@ -28,9 +31,13 @@ class LoginController extends Controller
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
-        ])->withInput();
+        ])->onlyInput('email');
+        // Security vulnerability, password was being sent back in response. use onlyInput
     }
 
+    /**
+     * Do logout
+     */
     public function logout(Request $request)
     {
         Auth::logout();

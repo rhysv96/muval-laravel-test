@@ -9,14 +9,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id');
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('status');
-            $table->unsignedBigInteger('user_id');
+            $table->foreignUlid('user_id')->nullable()->references('id')->on('users')->onDelete('no action');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
