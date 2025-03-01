@@ -20,6 +20,7 @@ These are major flaws I would not want to go to production with
 These are smaller issues. They are bugs, but not as big of a concern
 - Password length validation on login. I consider users not being able to log in as a P1 issue. They could reset, but it's just a bad experience.
 - Use of string over enum on task table, with no validation. I would be remiss to not mention it, so I'm going to mention it, I'm aware of MySQL enums, I'm just not a fan. I've opted to just go for validation on the PHP-side, out of preference.
+- no sort order on task index query
 
 # Style changes/DX improvements
 These are just changes that improve the developer experience in some way

@@ -23,7 +23,10 @@ class TaskController extends Controller
         // rather than `select * from users where id = ? limit 1` for _every single task_
         // 2. Use paginate. Always use paginate! This is a performance bottleneck waiting to happen
         // 3. Check that the tasks belong to the authenticated user, this is a security flaw
-        $tasks = Task::with(['user'])->paginate();
+        // 4. no default sort order. MySQL will sort arbitrarily in this case, no guarantee of sorting the same each time
+        $tasks = Task::with(['user'])
+            ->orderBy('created_at', 'DESC')
+            ->paginate();
 
         // Updated view to support pagination
         // As an aside, I'm aware of `compact`, I just don't like it personally. Full arrays are a bit wordier but more explicit, in a good way.
@@ -89,7 +92,7 @@ class TaskController extends Controller
     /**
      * Delete a task
      */
-    public function destroy(Task $task, TaskHandler $handler)
+    public function destroy(Task $task)
     {
         // Again, same issue as store and update, we should use Eloquent here to avoid SQL injections
         // $task->delete would also leave us option to switching to soft-deletes, which is a nice bonus!
