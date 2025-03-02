@@ -26,6 +26,6 @@ class RegistrationController extends Controller
 
         Auth::login($user);
 
-        return new WhoAmIResource($user);
+        return response()->json(new WhoAmIResource($user));
     }
 }

@@ -13,6 +13,6 @@ class WhoAmIController extends Controller
      */
     public function whoAmI(Request $request)
     {
-        return new WhoAmIResource($request->user());
+        return response()->json(new WhoAmIResource($request->user()));
     }
 }

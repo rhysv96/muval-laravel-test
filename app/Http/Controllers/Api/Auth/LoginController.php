@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return new WhoAmIResource($request->user());
+        return response()->json(new WhoAmIResource($request->user()));
     }
 
     /**
@@ -30,7 +30,7 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        Auth::logout();
+        auth()->guard('web')->logout();
 
         $request->session()->invalidate();
 

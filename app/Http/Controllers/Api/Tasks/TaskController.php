@@ -6,8 +6,9 @@ use App\Handlers\Tasks\DTOs\CreateTaskDTO;
 use App\Handlers\Tasks\DTOs\UpdateTaskDTO;
 use App\Handlers\Tasks\TaskHandler;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Task\StoreTaskRequest;
-use App\Http\Requests\Api\Task\UpdateTaskRequest;
+use App\Http\Requests\Api\Tasks\StoreTaskRequest;
+use App\Http\Requests\Api\Tasks\TasksListRequest;
+use App\Http\Requests\Api\Tasks\UpdateTaskRequest;
 use App\Http\Resources\Tasks\TaskResource;
 use App\Models\Task;
 use Illuminate\Support\Facades\Log;
@@ -16,15 +17,23 @@ use Symfony\Component\HttpFoundation\Response;
 class TaskController extends Controller
 {
     /**
-     * Show list tasks page
+     * List tasks
      */
-    public function index()
+    public function index(TasksListRequest $request)
     {
         $tasks = Task::with(['user'])
             ->orderBy('created_at', 'DESC')
-            ->paginate();
+            ->paginate($request->per_page ?? 15);
 
         return response()->json($tasks->through(fn ($task) => new TaskResource($task)));
+    }
+
+    /**
+     * Get task
+     */
+    public function get(Task $task)
+    {
+        return response()->json(new TaskResource($task));
     }
 
     /**

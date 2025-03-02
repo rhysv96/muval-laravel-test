@@ -6,8 +6,8 @@ use App\Handlers\Tasks\DTOs\CreateTaskDTO;
 use App\Handlers\Tasks\DTOs\UpdateTaskDTO;
 use App\Handlers\Tasks\TaskHandler;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Task\StoreTaskRequest;
-use App\Http\Requests\Api\Task\UpdateTaskRequest;
+use App\Http\Requests\Api\Tasks\StoreTaskRequest;
+use App\Http\Requests\Api\Tasks\UpdateTaskRequest;
 use App\Models\Task;
 use Exception;
 

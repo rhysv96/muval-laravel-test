@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\Task;
+namespace App\Http\Requests\Api\Tasks;
 
-use App\Models\Task;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateTaskRequest extends FormRequest
+class TasksListRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +22,7 @@ class UpdateTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'string|max:255',
-            'description' => 'string|max:255',
-            'status' => [Rule::in(Task::$statuses)],
+            'per_page' => 'numeric|min:1|max:100',
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Api\Task;
+namespace App\Http\Requests\Api\Tasks;
 
 use App\Models\Task;
 use Illuminate\Foundation\Http\FormRequest;
@@ -27,6 +27,7 @@ class UpdateTaskRequest extends FormRequest
             'title' => 'string|max:255',
             'description' => 'string|max:255',
             'status' => [Rule::in(Task::$statuses)],
+            'user_id' => 'required',
         ];
     }
 }

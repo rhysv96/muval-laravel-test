@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Web\Tasks;
 
+use App\Models\Task;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class DoPasswordResetRequest extends FormRequest
+class UpdateTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +24,9 @@ class DoPasswordResetRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6|confirmed',
+            'title' => 'string|max:255',
+            'description' => 'string|max:255',
+            'status' => [Rule::in(Task::$statuses)],
         ];
     }
 }

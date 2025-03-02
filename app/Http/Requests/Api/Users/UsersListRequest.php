@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\Task;
+namespace App\Http\Requests\Api\Users;
 
-use App\Models\Task;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreTaskRequest extends FormRequest
+class UsersListRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +22,8 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
-            'description' => 'string|max:255',
-            'status' => ['required', Rule::in(Task::$statuses)],
+            'query' => 'nullable|string|max:255',
+            'per_page' => 'numeric|min:1|max:100',
         ];
     }
 }

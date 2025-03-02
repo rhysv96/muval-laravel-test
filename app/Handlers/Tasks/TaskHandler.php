@@ -5,6 +5,7 @@ namespace App\Handlers\Tasks;
 use App\Handlers\Tasks\DTOs\CreateTaskDTO;
 use App\Handlers\Tasks\DTOs\UpdateTaskDTO;
 use App\Models\Task;
+use App\Util\Undefined;
 
 class TaskHandler
 {
@@ -25,11 +26,23 @@ class TaskHandler
      */
     public function updateTask(UpdateTaskDTO $dto): Task
     {
-        $dto->task->update(array_filter([
+        $data = collect([
             'title' => $dto->title,
             'description' => $dto->description,
             'status' => $dto->status,
-        ]));
+        ])->filter(fn ($value) => !($value instanceof Undefined))->toArray();
+
+        $dto->task->fill($data);
+
+        if (!($dto->user_id instanceof Undefined)) {
+            if (!is_null($dto->user_id)) {
+                $dto->task->user()->associate($dto->user_id);
+            } else {
+                $dto->task->user()->dissociate();
+            }
+        }
+
+        $dto->task->save();
 
         return $dto->task->refresh();
     }
