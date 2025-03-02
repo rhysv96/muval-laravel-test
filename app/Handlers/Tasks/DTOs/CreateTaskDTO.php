@@ -8,6 +8,7 @@ class CreateTaskDTO
         public string $title,
         public string $description,
         public string $status,
+        public ?string $userId,
     ) {}
 
     public static function fromArray(array $data): static
@@ -15,7 +16,8 @@ class CreateTaskDTO
         return new static(
             $data['title'],
             $data['description'],
-            $data['status']
+            $data['status'],
+            $data['user_id'] ?? null,
         );
     }
 }

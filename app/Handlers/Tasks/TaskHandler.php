@@ -14,11 +14,19 @@ class TaskHandler
      */
     public function createTask(CreateTaskDTO $dto): Task
     {
-        return Task::create([
+        $task = Task::make([
             'title' => $dto->title,
             'description' => $dto->description,
             'status' => $dto->status,
         ]);
+
+        if (!is_null($dto->userId)) {
+            $task->user()->associate($dto->userId);
+        }
+
+        $task->save();
+
+        return $task;
     }
 
     /**
@@ -34,9 +42,9 @@ class TaskHandler
 
         $dto->task->fill($data);
 
-        if (!($dto->user_id instanceof Undefined)) {
-            if (!is_null($dto->user_id)) {
-                $dto->task->user()->associate($dto->user_id);
+        if (!($dto->userId instanceof Undefined)) {
+            if (!is_null($dto->userId)) {
+                $dto->task->user()->associate($dto->userId);
             } else {
                 $dto->task->user()->dissociate();
             }

@@ -12,7 +12,7 @@ class UpdateTaskDTO
         public string|Undefined $title,
         public string|Undefined $description,
         public string|Undefined $status,
-        public string|Undefined|null $user_id,
+        public string|Undefined|null $userId,
     ) {}
 
     public static function fromArray(Task $task, array $data): static
@@ -22,9 +22,11 @@ class UpdateTaskDTO
             $data['title'] ?? new Undefined,
             $data['description'] ?? new Undefined,
             $data['status'] ?? new Undefined,
-            isset($data['user_id'])
-                ? (is_null($data['user_id']) ? null : $data['user_id'])
-                : new Undefined,
+            match (true) {
+                is_null($data['user_id']) => null,
+                !isset($data['user_id']) => new Undefined,
+                default => $data['user_id'],
+            }
         );
     }
 }

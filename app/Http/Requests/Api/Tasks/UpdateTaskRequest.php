@@ -27,7 +27,7 @@ class UpdateTaskRequest extends FormRequest
             'title' => 'string|max:255',
             'description' => 'string|max:255',
             'status' => [Rule::in(Task::$statuses)],
-            'user_id' => 'required',
+            'user_id' => 'nullable|ulid|exists:users,id',
         ];
     }
 }

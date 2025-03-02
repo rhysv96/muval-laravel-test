@@ -27,6 +27,7 @@ class StoreTaskRequest extends FormRequest
             'title' => 'required|string|max:255',
             'description' => 'string|max:255',
             'status' => ['required', Rule::in(Task::$statuses)],
+            'user_id' => 'nullable|ulid|exists:users,id',
         ];
     }
 }
