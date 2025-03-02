@@ -63,12 +63,12 @@ class TaskController extends Controller
     {
         if (! $task->delete()) {
             Log::error('Failed to delete task', [
-                'task_id' => $task->id
+                'task_id' => $task->id,
             ]);
 
-            return response()->json([ 'success' => false ], Response::HTTP_INTERNAL_SERVER_ERROR);
+            return response()->json(['success' => false], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
-        return response()->json([ 'success' => true ]);
+        return response()->json(['success' => true]);
     }
 }

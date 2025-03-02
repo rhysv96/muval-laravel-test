@@ -2,7 +2,4 @@
 
 namespace App\Util;
 
-class Undefined
-{
-
-}
+class Undefined {}

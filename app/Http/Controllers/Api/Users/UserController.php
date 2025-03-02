@@ -14,10 +14,9 @@ class UserController extends Controller
      */
     public function index(UsersListRequest $request)
     {
-        $tasks = User
-            ::when($request->has('query'), function ($query) use ($request) {
-                return $query->where('name', 'LIKE', '%' . $request->get('query') . '%');
-            })
+        $tasks = User::when($request->has('query'), function ($query) use ($request) {
+            return $query->where('name', 'LIKE', '%'.$request->get('query').'%');
+        })
             ->orderBy('created_at', 'DESC')
             ->paginate($request->per_page ?? 15);
 

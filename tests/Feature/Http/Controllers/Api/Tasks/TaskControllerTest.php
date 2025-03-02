@@ -75,7 +75,7 @@ test('Update task requires valid task ID', function () {
 
     $response = $this->actingAs($user)->withHeaders([
         'Accept' => 'application/json',
-    ])->patch('/api/tasks/' . Ulid::generate(), [
+    ])->patch('/api/tasks/'.Ulid::generate(), [
         'title' => fake()->word(),
         'description' => fake()->paragraph(),
         'status' => collect(Task::$statuses)->random(),

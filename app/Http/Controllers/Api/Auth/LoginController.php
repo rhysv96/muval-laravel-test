@@ -16,7 +16,7 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        if (!Auth::attempt($request->validated())) {
+        if (! Auth::attempt($request->validated())) {
             return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
         }
 
@@ -36,6 +36,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return response()->json([ 'success' => true ]);
+        return response()->json(['success' => true]);
     }
 }

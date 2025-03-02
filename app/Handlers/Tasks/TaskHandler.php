@@ -20,7 +20,7 @@ class TaskHandler
             'status' => $dto->status,
         ]);
 
-        if (!is_null($dto->userId)) {
+        if (! is_null($dto->userId)) {
             $task->user()->associate($dto->userId);
         }
 
@@ -38,12 +38,12 @@ class TaskHandler
             'title' => $dto->title,
             'description' => $dto->description,
             'status' => $dto->status,
-        ])->filter(fn ($value) => !($value instanceof Undefined))->toArray();
+        ])->filter(fn ($value) => ! ($value instanceof Undefined))->toArray();
 
         $dto->task->fill($data);
 
-        if (!($dto->userId instanceof Undefined)) {
-            if (!is_null($dto->userId)) {
+        if (! ($dto->userId instanceof Undefined)) {
+            if (! is_null($dto->userId)) {
                 $dto->task->user()->associate($dto->userId);
             } else {
                 $dto->task->user()->dissociate();

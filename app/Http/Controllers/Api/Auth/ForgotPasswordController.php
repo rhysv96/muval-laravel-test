@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Auth\DoPasswordResetFormRequest;
 use App\Http\Requests\Api\Auth\DoPasswordResetRequest;
 use App\Http\Requests\Api\Auth\RequestResetPasswordRequest;
 use App\Models\User;
@@ -23,10 +22,10 @@ class ForgotPasswordController extends Controller
         $status = Password::sendResetLink($request->only('email'));
 
         if ($status !== Password::RESET_LINK_SENT) {
-            return response()->json([ 'status'  => $status ], Response::HTTP_BAD_REQUEST);
+            return response()->json(['status' => $status], Response::HTTP_BAD_REQUEST);
         }
 
-        return response()->json([ 'status'  => $status ]);
+        return response()->json(['status' => $status]);
     }
 
     /**
@@ -48,9 +47,9 @@ class ForgotPasswordController extends Controller
         );
 
         if ($status !== Password::RESET_LINK_SENT) {
-            return response()->json([ 'status'  => $status ], Response::HTTP_BAD_REQUEST);
+            return response()->json(['status' => $status], Response::HTTP_BAD_REQUEST);
         }
 
-        return response()->json([ 'status'  => $status ]);
+        return response()->json(['status' => $status]);
     }
 }

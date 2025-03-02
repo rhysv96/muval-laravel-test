@@ -17,7 +17,7 @@ Route::post('/reset-password', [ForgotPasswordController::class, 'doPasswordRese
 Route::post('/verify/{id}/{hash}', [VerificationController::class, 'verifyEmail']);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::get('/whoami',  [ WhoAmIController::class, 'whoAmI' ]);
+    Route::get('/whoami', [WhoAmIController::class, 'whoAmI']);
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::post('/send-verification', [VerificationController::class, 'sendVerificationEmail']);
     Route::get('/tasks/{task}', [TaskController::class, 'get']);

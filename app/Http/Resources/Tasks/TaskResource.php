@@ -18,12 +18,13 @@ class TaskResource extends JsonResource
     {
         /** @var Task $task */
         $task = $this->resource;
+
         return [
             'id' => $task->id,
             'title' => $task->title,
             'description' => $task->description,
             'status' => $task->status,
-            'assignee' => !empty($task->user) ? new UserResource($task->user) : null,
+            'assignee' => ! empty($task->user) ? new UserResource($task->user) : null,
         ];
     }
 }

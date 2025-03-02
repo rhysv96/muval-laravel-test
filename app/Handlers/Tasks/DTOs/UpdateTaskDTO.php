@@ -24,7 +24,7 @@ class UpdateTaskDTO
             $data['status'] ?? new Undefined,
             match (true) {
                 is_null($data['user_id']) => null,
-                !isset($data['user_id']) => new Undefined,
+                ! isset($data['user_id']) => new Undefined,
                 default => $data['user_id'],
             }
         );
